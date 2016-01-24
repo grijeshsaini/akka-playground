@@ -1,3 +1,4 @@
 rootProject.name = 'akka-playground'
 include 'akka-hello-world'
+include 'akka-wordcount'
 
