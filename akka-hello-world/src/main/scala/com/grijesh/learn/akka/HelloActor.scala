@@ -8,6 +8,7 @@ import akka.actor.{Props, ActorSystem, Actor}
 class HelloActor extends Actor{
   override def receive = {
     case "Hey man !!!!" => println("Hey !!!")
+    case "Bye" => context stop self
     case _       => println("Have you said something ?")
   }
 }
@@ -18,4 +19,5 @@ object HelloActor extends App{
   val helloActor = system.actorOf(Props[HelloActor], name = "helloactor")
   helloActor ! "Hey man !!!!" //tell
   helloActor ! "hey..."
+  helloActor ! "Bye"
 }
