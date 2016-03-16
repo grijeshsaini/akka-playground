@@ -15,7 +15,9 @@ class HelloActor2(actorName:String) extends Actor {
 object HelloActor2 extends App{
   val system = ActorSystem("HelloSystem")
   // default Actor constructor
-  val helloActor = system.actorOf(Props[HelloActor], name = "helloactor")
+  val helloActor = system.actorOf(Props(new HelloActor2("Grijesh")), name = "helloactor")
   helloActor ! "Hey man !!!!" //tell
   helloActor ! "hey..."
+  system.terminate()
+
 }

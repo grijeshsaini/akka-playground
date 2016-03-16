@@ -20,4 +20,5 @@ object HelloActor extends App{
   helloActor ! "Hey man !!!!" //tell
   helloActor ! "hey..."
   helloActor ! "Bye"
+  system.terminate()
 }
